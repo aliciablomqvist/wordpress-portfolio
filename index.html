@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alicia Blomqvist - WordPress Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #F5F1E8;
+            color: #2C2C2C;
+            line-height: 1.6;
+        }
+        header {
+            background: #2C2C2C;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        h1 { font-size: 2.5rem; font-weight: 300; letter-spacing: 0.1em; }
+        .subtitle { margin-top: 1rem; opacity: 0.8; }
+        .container { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
+        .project {
+            background: white;
+            padding: 2rem;
+            border: 1px solid #E8DCC8;
+            transition: all 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(201, 169, 97, 0.2);
+        }
+        .project h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #C9A961;
+        }
+        .project p { margin-bottom: 1.5rem; color: #666; }
+        .tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .tech span {
+            background: #F5F1E8;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.85rem;
+            border-radius: 3px;
+        }
+        .btn {
+            display: inline-block;
+            background: #2C2C2C;
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .btn:hover { background: #546e75; }
+        footer {
+            background: #2C2C2C;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Alicia Blomqvist</h1>
+        <p class="subtitle">WordPress Webbdesigner & Utvecklare</p>
+    </header>
+
+    <div class="container">
+        <div class="projects">
+            
+            <div class="project">
+                <h3>Lumina Drinks</h3>
+                <p>Elegant cocktail bar-webbplats med full-width design, event calendar, reservation form och Instagram-integration.</p>
+                <div class="tech">
+                    <span>WordPress</span>
+                    <span>Custom Theme</span>
+                    <span>Block Patterns</span>
+                    <span>Responsive</span>
+                </div>
+                <a href="https://luminadrinks.infinityfreeapp.com" class="btn" target="_blank">Besök Webbplats →</a>
+            </div>
+
+            <div class="project">
+                <h3>Luna Balance Yoga</h3>
+                <p>Lunn och harmonisk yoga studio-webbplats med class schedule, instructor profiles och booking-system.</p>
+                <div class="tech">
+                    <span>WordPress</span>
+                    <span>WooCommerce</span>
+                    <span>UX Design</span>
+                    <span>Calm Aesthetics</span>
+                </div>
+                <a href="https://lunabalance.infinityfreeapp.com" class="btn" target="_blank">Besök Webbplats →</a>
+            </div>
+
+            <div class="project">
+                <h3>Argentum Jewelry</h3>
+                <p>Minimalistisk e-handelsplattform för smycken med WooCommerce, produktfilter och streamlined checkout.</p>
+                <div class="tech">
+                    <span>WordPress</span>
+                    <span>WooCommerce</span>
+                    <span>E-commerce</span>
+                    <span>Minimal Design</span>
+                </div>
+                <a href="https://argentum.infinityfreeapp.com" class="btn" target="_blank">Besök Webbplats →</a>
+            </div>
+
+            <div class="project">
+                <h3>Aperture Photography</h3>
+                <p>Editorial fotoportfölj med photobook-inspirerade layouts, flipbook gallery och projektvisningar.</p>
+                <div class="tech">
+                    <span>WordPress</span>
+                    <span>Custom Post Types</span>
+                    <span>Portfolio</span>
+                    <span>Interactive</span>
+                </div>
+                <a href="https://aperture.infinityfreeapp.com" class="btn" target="_blank">Besök Webbplats →</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Kontakt: alicia.blomqvist55@gmail.com | Tel: 0722823377</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">Alla webbplatser byggda med WordPress med egna custom themes.</p>
+    </footer>
+</body>
+</html>
