@@ -16,7 +16,7 @@ body {
 header {
   background:
     linear-gradient(135deg, rgba(170, 162, 175, 0.75), rgba(109, 61, 93, 0.39)),
-    url("photo-1649784451222-e866f72476a6.avif") center/cover;
+    url("./photo-1649784451222-e866f72476a6.avif") center/cover;
   padding: 8rem 2rem;
   text-align: center;
   position: relative;
