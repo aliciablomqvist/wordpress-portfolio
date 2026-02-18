@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@300;400;500&display=swap");
 
+
 * {
   margin: 0;
   padding: 0;
@@ -13,9 +14,22 @@ body {
   line-height: 1.6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #d5b39d;
+  color: white;
+}
+
+
 header {
-  background:
-    linear-gradient(135deg, rgba(170, 162, 175, 0.75), rgba(109, 61, 93, 0.39)),
+  background: linear-gradient(
+      135deg,
+      rgba(170, 162, 175, 0.75),
+      rgba(109, 61, 93, 0.39)
+    ),
     url("./photo-1649784451222-e866f72476a6.avif") center/cover;
   padding: 8rem 2rem;
   text-align: center;
@@ -40,20 +54,19 @@ header::before {
 
 h1 {
   font-family: "Crimson Text", Georgia, serif;
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2rem, 6vw, 5rem);
   font-weight: 600;
   letter-spacing: 0.03em;
   margin-bottom: 1rem;
   color: #ffffff;
-  text-shadow:
-    0 3px 6px rgba(53, 25, 46, 0.4),
+  text-shadow: 0 3px 6px rgba(53, 25, 46, 0.4),
     0 6px 12px rgba(53, 25, 46, 0.3);
   position: relative;
   z-index: 1;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
   font-weight: 300;
   letter-spacing: 0.08em;
   color: #f8f6f2;
@@ -63,6 +76,7 @@ h1 {
   text-transform: uppercase;
 }
 
+
 .container {
   max-width: 1200px;
   margin: 5rem auto;
@@ -71,7 +85,7 @@ h1 {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 2.5rem;
 }
 
@@ -92,11 +106,15 @@ h1 {
 
 .project-content {
   padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .project h3 {
   font-family: "Crimson Text", Georgia, serif;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   margin-bottom: 1rem;
   color: #35192e;
@@ -106,35 +124,11 @@ h1 {
 .project p {
   margin-bottom: 1.5rem;
   color: #6d3d5d;
-  font-size: 0.95rem;
+  font-size: clamp(0.875rem, 1.5vw, 0.95rem);
   line-height: 1.8;
+  max-width: 100%;
 }
 
-.tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 2rem;
-}
-
-.tech span {
-  background: linear-gradient(135deg, #f8f6f2, #e8e4db);
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  border-radius: 20px;
-  letter-spacing: 0.03em;
-  font-weight: 500;
-  color: #6d3d5d;
-  border: 1px solid #d5b39d;
-  transition: all 0.3s ease;
-}
-
-.tech span:hover {
-  background: white;
-  border-color: #a46f5e;
-  color: #35192e;
-  transform: translateY(-2px);
-}
 
 .btn {
   display: inline-block;
@@ -142,14 +136,15 @@ h1 {
   color: white;
   padding: 1rem 2.5rem;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 500;
   border-radius: 2px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(109, 61, 93, 0.3);
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
   text-align: center;
 }
 
@@ -158,6 +153,11 @@ h1 {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(164, 111, 94, 0.4);
 }
+
+.btn:active {
+  transform: translateY(0);
+}
+
 
 footer {
   background: linear-gradient(135deg, #aaa2af, #6d3d5d);
@@ -169,7 +169,7 @@ footer {
 }
 
 footer p {
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   letter-spacing: 0.03em;
   color: rgba(248, 246, 242, 0.9);
 }
@@ -181,18 +181,39 @@ footer p:first-child {
 }
 
 footer p:last-child {
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.2vw, 0.85rem);
   margin-top: 0.8rem;
   opacity: 0.8;
+}
+
+
+@media (max-width: 1024px) {
+  .container {
+    margin: 4rem auto;
+  }
+
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
   header {
     padding: 5rem 1.5rem;
+    background-position: center;
+    background-attachment: scroll;
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    letter-spacing: 0.06em;
   }
 
   .container {
@@ -206,15 +227,140 @@ footer p:last-child {
   }
 
   .project-content {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .project h3 {
+    font-size: 1.6rem;
+  }
+
+  .project p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.8rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  footer {
+    padding: 2.5rem 1.5rem;
+    margin-top: 4rem;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@media (max-width: 480px) {
+  header {
+    padding: 4rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  .container {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .projects {
+    gap: 1.5rem;
+  }
+
+  .project-content {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .project h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .project p {
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  footer p:last-child {
+    font-size: 0.75rem;
+  }
 }
 
-::selection {
-  background: #d5b39d;
-  color: white;
+@media (max-width: 375px) {
+  header {
+    padding: 3rem 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .project-content {
+    padding: 1.25rem 1rem;
+  }
+
+  .project h3 {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.25rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    padding: 3rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    margin: 2rem auto;
+  }
+}
+
+@media (hover: none) {
+  .project:hover {
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
 }
